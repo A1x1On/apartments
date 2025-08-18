@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "url": "/img/apartments/preview-1.png",
+    "title": "3-комнатная №82",
+    "rooms": 3,
+    "meters": 63.5,
+    "floor": 1,
+    "floors": 5,
+    "price": 6630500
+  },
+  {
+    "id": 2,
+    "url": "/img/apartments/preview-1.png",
+    "title": "4-комнатная №104",
+    "rooms": 4,
+    "meters": 102,
+    "floor": 4,
+    "floors": 8,
+    "price": 8800000
+  },
+  {
+    "id": 3,
+    "url": "/img/apartments/preview-1.png",
+    "title": "2-комнатная №68",
+    "rooms": 2,
+    "meters": 57.1,
+    "floor": 2,
+    "floors": 17,
+    "price": 5510000
+  },
+  {
+    "id": 4,
+    "url": "/img/apartments/preview-1.png",
+    "title": "2-комнатная №28",
+    "rooms": 2,
+    "meters": 54,
+    "floor": 18,
+    "floors": 20,
+    "price": 5510000
+  },
+  {
+    "id": 5,
+    "url": "/img/apartments/preview-1.png",
+    "title": "1-комнатная №5",
+    "rooms": 1,
+    "meters": 43.7,
+    "floor": 1,
+    "floors": 12,
+    "price": 4210000
+  }
+]

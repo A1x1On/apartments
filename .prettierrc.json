@@ -1,0 +1,9 @@
+{
+  "printWidth": 120,
+  "css": {
+    "endOfLine": "lf"
+  },
+  "scss": {
+    "endOfLine": "lf"
+  }
+}
