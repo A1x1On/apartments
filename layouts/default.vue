@@ -4,7 +4,7 @@
   </section>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - Главная` : "";
