@@ -26,6 +26,8 @@ export const useApartmentStore = defineStore("apartmentStore", () => {
     meters: METERS,
   });
 
+  const savedFilter = ref<IApartmentFilter | undefined>();
+
   const sort = ref<IApartmentSortOption[]>([
     { name: "meters", isSort: false, order: "ASC" },
     { name: "floor", isSort: false, order: "ASC" },
@@ -100,6 +102,17 @@ export const useApartmentStore = defineStore("apartmentStore", () => {
     itemsLimit.value = itemsLimit.value >= data.value.length ? itemsLimit.value : limit;
   };
 
+  const saveFilterToLocalStorage = () => {
+    if (savedFilter.value) {
+      localStorage.setItem(APARTMENT_FILTER, JSON.stringify(filter.value));
+    }
+  };
+
+  const getFilterFromLocalStorage = (): IApartmentFilter | undefined => {
+    const json = localStorage.getItem(APARTMENT_FILTER);
+    return json ? JSON.parse(json) : undefined;
+  };
+
   const resetFilter = () => {
     itemsLimit.value = ITEMS_LIMIT;
 
@@ -110,22 +123,17 @@ export const useApartmentStore = defineStore("apartmentStore", () => {
     };
   };
 
-  const saveFilterToLocalStorage = () => {
-    if (filter.value.price[0] !== 0) {
-      localStorage.setItem(APARTMENT_FILTER, JSON.stringify(filter.value));
-    }
+  const setFilter = () => {
+    const filterInit = getFilterFromLocalStorage() || filter.value;
+
+    savedFilter.value = filterInit;
+    filter.value = filterInit;
   };
 
   watch(filter, saveFilterToLocalStorage, { deep: true });
 
   onMounted(() => {
-    const savedFilter = localStorage.getItem(APARTMENT_FILTER);
-
-    if (savedFilter) {
-      filter.value = JSON.parse(savedFilter);
-    } else {
-      resetFilter();
-    }
+    setFilter();
   });
 
   return {
